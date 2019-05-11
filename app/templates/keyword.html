@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+ <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+            <div class="text-center mb-4">
+                <form class="form-signin" action="{{ url_for('keyword') }}" method="POST">
+                    <div class="text-center mb-4">
+                        <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Keyword</h1>
+                        <br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKeyword" class="mr-sm-2" >Keyword Text</label>
+                        <input type="input" id="keyword" class="form-control" required="" autofocus="" name="keyword" placeholder="{{ form.keyword_placeholder }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputResponse">Opt in Auto-Response</label>
+                        <input type="input" id="auto_response" class="form-control" required="" name="auto_response" placeholder="{{ form.auto_response_placeholder }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputInvalidResponse">Invalid Keyword Response</label>
+                        <input type="input" id="invalid_response" class="form-control" required="" name="invalid_response" placeholder="{{ form.invalid_response_placeholder }}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="save">Save</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

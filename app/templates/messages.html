@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-4">
+            <div class="text-center mb-4">
+                <form class="form-signin" action="{{ url_for('messages') }}" method="POST">
+                    <div class="text-center mb-4">
+                        <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Blast (Entire Opt-In)</h1>
+                        <br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKeyword" class="mr-sm-2">Message</label>
+                        <textarea class="form-control" rows="5" id="msg" class="form-control" required="" autofocus="" name="msg"></textarea>
+                    </div>
+                    <input type="hidden" name="isBlast" value=True>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" name="Send" type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-4">
+            <div class="text-center mb-4">
+                <form class="form-signin" action="{{ url_for('messages') }}" method="POST">
+                    <div class="text-center mb-4">
+                        <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Individual Message</h1>
+                        <br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKeyword" class="mr-sm-2" >Phone Number</label>
+                        <select id="receiver" class="form-control" required="" autofocus="" name="receiver">
+                            {% for receiver in form.receivers %}
+                                <option value="{{ receiver }}">{{ receiver }}</option>
+                            {%  endfor %}
+                        </select>
+                        <!--<input type="input" id="receiver" class="form-control" required="" autofocus="" name="receiver"> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKeyword" class="mr-sm-2">Message</label>
+                        <textarea class="form-control" rows="5" id="msg_ind" class="form-control" required="" autofocus="" name="msg"></textarea>
+                    </div>
+                    <input type="hidden" name="isBlast" value=False>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Send">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        </div>
+
+{% endblock %}
