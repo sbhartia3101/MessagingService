@@ -16,7 +16,7 @@ idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
 kafka-python==1.4.5
-Mako==1.0.8
+Mako==1.2.2
 MarkupSafe==1.1.1
 marshmallow==2.14.0
 marshmallow-sqlalchemy==0.13.2
